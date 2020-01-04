@@ -1,0 +1,65 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1 class="panel-title" style="color:white">Payment Form</h1>
+    </div><BR/><BR/>
+    <div class="panel-body">
+        <div class="form-group">
+            <label for="paymenttype" style="color:black">Electronics</label>
+            <br>
+            <select id="paymenttype"(change)="payment($event)"class="form-class">
+                <option  fixed></option>
+                <option value="Mobile">Mobile</option>
+                <option value="Laptops">Laptops</option>
+                <option value="Tablets">Tablets</option>
+                <option value="Powerbanks">Powerbanks</option>
+            </select>
+     </div>
+ </div>
+ <div class="panel-body">
+        <div class="form-group">
+            <label for="paymenttype" style="color:black">Tv & Appliances</label>
+            <br>
+            <select id="paymenttype"(change)="payment($event)"class="form-class">
+                <option  fixed></option>
+                <option value="Television">Television</option>
+                <option value="Washing Machines">Washing Machines</option>
+                <option value="Air Conditioners">Air Conditioners</option>
+                <option value="Refrigerators">Refrigerators </option>
+            </select>
+     </div>
+ </div>
+ <div class="panel-body">
+        <div class="form-group">
+            <label for="paymenttype" style="color:black">Baby & Kids</label>
+            <br>
+            <select id="paymenttype"(change)="payment($event)"class="form-class">
+                <option  fixed></option>
+                <option value="School Supplies">School Supplies</option>
+                <option value="Kids Footwear">Kids Footwear</option>
+                <option value="Toys">Toys</option>
+                <option value="Winterwear">Winterwear</option>
+            </select>
+     </div>
+ </div>
+ <div class="panel-body">
+        <div class="form-group">
+            <label for="paymenttype" style="color:black">Grocery</label>
+            <br>
+            <select id="paymenttype"(change)="payment($event)"class="form-class">
+                <option  fixed></option>
+                <option value="Sugar and Sweetners">Sugar and Sweetners</option>
+                <option value="Dals and Pulses">Dals and Pulses</option>
+                <option value="Edible Oils">Edible Oils</option>
+                <option value="Dry Fruits">Dry Fruits,Nuts & Seeds</option>
+            </select>
+     </div>
+ </div>
+ 
+  <div>
+      <button class="btn btn-warning" (click)="yourorder()">Your Orders</button>
+  </div>
+</div>
+<br>
+<div style="float: left; position: absolute;">
+    <router-outlet></router-outlet>
+</div>

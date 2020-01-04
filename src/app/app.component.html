@@ -1,0 +1,22 @@
+<!-- <div>
+    <ul class="nav nav-tabs">
+      <li><a routerLink="homepage">Homepage</a></li>-->
+      <!-- <li><a routerLink="addproduct">Add Product</a></li> -->
+      <!-- <li><a routerLink="updateordelete">Update&Delete</a></li>
+      <li><a routerLink="update">Update</a></li> -->
+      <!-- <li><a routerLink="books">Books</a></li>
+      <li><a routerLink="add-book">Add Book</a></li>
+      <li><a routerLink="add-movie">Add Movie</a></li>
+      <li><a routerLink="movie-list">Movie List</a></li>
+      <li><a routerLink="user">Get User</a></li>
+      <li><a routerLink="addUser">Add User</a></li> -->
+    <!-- </ul>
+  </div>  -->
+  <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+  <a class="nav-item nav-link" (click)="logout()">Logout</a>
+</div>
+</nav>
+  <div>
+    <router-outlet></router-outlet>
+  </div> 

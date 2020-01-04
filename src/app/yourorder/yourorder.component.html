@@ -1,0 +1,51 @@
+
+    <!-- <div *ngFor="let u of user">
+        {{u.Statusid}}
+        <br>
+        {{u.EmailId}}
+        <br>
+        {{u.Stage}}
+        <br>
+        {{u.Proname}}
+        <br>
+        {{u.Proprice}}
+        <br>
+        <img src={{u.Proimage}}>
+        <br>
+    <button class="btn btn-danger"(click)="cancelyourorder(u.Statusid)">Cancel Order</button> 
+</div> -->
+<!-- <table class="table table-hover">
+    <tr *ngIf="users">
+        <td>{{users.Statusid}}</td>
+        <td>{{users.Stage}}</td>
+        <td>{{users.Proname}}</td>
+        <td>{{users.Proprice}}</td>
+        <td><img src={{users.Proimage}}></td>
+        <td><button class="btn btn-danger"(click)="cancelyourorder(users.Statusid)">Cancel Order</button></td>
+    </tr>
+</table> -->
+
+
+
+<div *ngIf = "users<'0'" style="color:red;">
+        Nothing in your Order list
+</div>
+<div *ngIf="users > '0'">
+<div *ngFor="let u of users">
+    {{users | json}}
+    {{u.Statusid}}
+        <br>
+        {{u.EmailId}}
+        <br>
+        {{u.Stage}}
+        <br>
+        {{u.Proname}}
+        <br>
+        {{u.Proprice}}
+        <br>
+        <img src={{u.Proimage}}>
+        <br>
+        <button class="btn btn-danger"(click)="cancelyourorder(u.Statusid)">Cancel Order</button>
+</div>
+
+</div>

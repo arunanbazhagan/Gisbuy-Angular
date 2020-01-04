@@ -1,0 +1,48 @@
+<!-- <div *ngFor="let u of user">
+<h4>{{u.Proname}}</h4>
+<br>
+Category:&nbsp;&nbsp;{{u.Category}}
+<br>
+Type:&nbsp;&nbsp;&nbsp;{{u.Type}}
+<br><label>Specifications</label>
+<ul>
+    <li>{{u.Des1}}</li>
+    <li>{{u.Des2}}</li>
+    <li>{{u.Des3}}</li>
+    <li>{{u.Des4}}</li>
+    <li>{{u.Des5}}</li>
+</ul>
+Price:&nbsp;&nbsp;&nbsp;{{u.Proprice}}
+<br>
+Available Stock:&nbsp;{{u.Proquantity}}
+<br>
+<img src={{u.Proimage}}>
+<br>
+<button class="glyphicon glyphicon-shopping-cart"(click)="addtocart(u)">Add to Cart</button>
+{{result}}
+</div> -->
+<body>
+    <div class="row">
+      <div *ngFor="let p of user">
+      <div class="col-lg-4">
+        <div class="card">
+            <img class="card-img-top"[src]="p.Proimage" alt="Card image">
+            <div class="card-body">
+                <h3>{{p.Proname}}</h3>
+                <h3>Specifications</h3>
+                <ul>
+                  <li>{{p.Des1}}</li>
+                  <li>{{p.Des2}}</li>
+                  <li>{{p.Des3}}</li>
+                  <li>{{p.Des4}}</li>
+                  <li>{{p.Des5}}</li>
+                </ul>
+                <h3>Price</h3>{{p.Proprice}}
+                <h3>Available Stock</h3>{{p.Proquantity}}
+                <button (click)="addtocart(p)">Add to Cart</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>

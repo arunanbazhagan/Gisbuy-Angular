@@ -1,0 +1,110 @@
+
+<!-- <form>
+    <h1>New Product</h1>
+     <div style="text-align: center;">Product Id</div>
+    <input type="text"[(ngModel)]="users.Proid" class=form-control placeholder="Enter the Product Id"/>
+    <div style="text-align: center;">Product Name</div>
+    <input type="text" [(ngModel)]="users.Proname"class=form-control placeholder="Enter the Product Name"/>
+    <div style="text-align: center;">Category</div>
+    <input type=text [(ngModel)]="users.Category"class=form-control placeholder="Category"/>
+    <div style="text-align: center;">Type</div>
+    <input type="text" [(ngModel)]="users.Type"class=form-control placeholder="Type">
+    <div style="text-align: center;">Description 1</div>
+    <input type="text"[(ngModel)]="users.Des1" class=form-control placeholder="Description">    
+    <div style="text-align: center;">Description 2</div>
+    <input type="text"[(ngModel)]="users.Des2" class=form-control placeholder="Description">
+    <div style="text-align: center;">Description 3</div>
+    <input type="text"[(ngModel)]="users.Des3" class=form-control placeholder="Description">
+    <div style="text-align: center;">Description 4</div>
+    <input type="text" [(ngModel)]="users.Des4"class=form-control placeholder="Description">
+    <div style="text-align: center;">Description 5</div>
+    <input type="text" [(ngModel)]="users.Des5"class=form-control placeholder="Description"> 
+    <div style="text-align: center;">Price</div>
+    <input type="text"[(ngModel)]="users.Proprice" class=form-control placeholder="Product Price">
+    <div style="text-align: center;">Quantity</div>
+    <input type="text" [(ngModel)]="users.Quantity"class=form-control placeholder="Available Quantity">
+    <div style="text-align: center;">Image</div>
+    <input type="text" [(ngModel)]="users.Proimage"class=form-control placeholder="Image">
+    <button class="btn btn-success" (click)="Addproduct()">Add Product</button>
+    <button class="btn btn-danger" (click)="resetForm()">Reset</button>
+</form> -->
+
+<table class="table table-hover">   
+    <thead>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    <th>Category</th>
+    <th>Type</th>
+    <th>Description 1</th>
+    <th>Description 2</th>
+    <th>Description 3</th>
+    <th>Description 4</th>
+    <th>Description 5</th>
+    <th>Product Price</th>
+    <th>Product Quantity</th>
+    <th>Product Image Url</th>
+</thead>
+<tbody>
+<tr  *ngFor='let user of users; let i = index'>
+    <td>
+    <input type="text" name=Proid #Proid="ngModel" [(ngModel)]="user.Proid" placeholder="Product Id" required>
+    <span *ngIf="Proid.errors?.required "><alert type="warning">This field is required</alert>
+    </span>
+    </td>
+    <td>
+        
+        <input type="text" name=Proname #Proname="ngModel" [(ngModel)]="user.Proname" placeholder="Product Name" required>
+        <span *ngIf="Proname.errors?.required"><alert type="warning">This field is required</alert></span>
+    </td>
+   <td>
+            <input type="text" name=Category #Category="ngModel" [(ngModel)]="user.Category" placeholder="Category" required>
+            <span *ngIf="Category.errors?.required"><alert type="warning">This field is required</alert></span>
+        </td>
+    <td>
+        <input type="text" name=Type #Type="ngModel" [(ngModel)]="user.Type" placeholder="Type" required>
+        <span *ngIf="Type.errors?.required"><alert type="warning">This field is required</alert></span>
+    </td>
+
+    <td>
+        <input type="text" name=Des1 #Des1="ngModel" [(ngModel)]="user.Des1"  placeholder="Description 1" required>
+        <span *ngIf="Des1.errors?.required"><alert type="warning">This field is required</alert></span>
+    </td>
+    <td>
+            <input type="text" name=Des2 #Des2="ngModel" [(ngModel)]="user.Des2" placeholder="Description 2" required>
+            <span *ngIf="Des2.errors?.required"><alert type="warning">This field is required</alert></span>
+        </td>
+        <td>
+                <input type="text" name=Des3 #Des3="ngModel" [(ngModel)]="user.Des3" placeholder="Description 3" required>
+                <span *ngIf="Des3.errors?.required"><alert type="warning">This field is required</alert></span>
+            </td>
+            <td>
+                    <input type="text" name=Des4 #Des4="ngModel" [(ngModel)]="user.Des4" placeholder="Description 4" required>
+                    <span *ngIf="Des4.errors?.required"><alert type="warning">This field is required</alert></span>
+                </td>
+                <td>
+                        <input type="text" name=Des5 #Des5="ngModel" [(ngModel)]="user.Des5" placeholder="Description 5" required>
+                        <span *ngIf="Des5.errors?.required"><alert type="warning">This field is required</alert></span>
+                    </td>
+                    <td>
+                            <input type="text" name=Proprice #Proprice="ngModel" [(ngModel)]="user.Proprice" placeholder="Product Price" required>
+                            <span *ngIf="Proprice.errors?.required"><alert type="warning">This field is required</alert></span>
+                        </td>
+                        <td>
+                                <input type="text" name=Quantity #Quantity="ngModel" [(ngModel)]="user.Quantity" placeholder="Product Quantity" required>
+                                <span *ngIf="Quantity.errors?.required"><alert type="warning">This field is required</alert></span>
+                            </td>
+                            <td>
+                                    <input type="text" name=Proimage #Proimage="ngModel" [(ngModel)]="user.Proimage" placeholder="Image URL" required>
+                                    <span *ngIf="Proimage.errors?.required"><alert type="warning">This field is required</alert></span>
+                                </td>
+    
+
+<td> <button *ngIf='i==users.length-1' class="btn btn-success" (click)="add()">Add Another Product</button></td> 
+   <td> <button *ngIf='i!=0'  (click)="remove(i)" class="btn btn-danger">Remove</button></td> 
+    
+</tr>
+<tr><button  style="width:50%" (click)='Addproduct()'  class="btn btn-success">Add Product</button></tr>
+</tbody>
+
+</table>
+   

@@ -1,0 +1,111 @@
+<!-- {{users |json}} 
+
+
+<div *ngFor="let u of users">
+    <label>Product ID</label>&nbsp;&nbsp;{{u.Proid}}
+    <br>
+    <label>Price:</label>&nbsp;&nbsp;{{u.Proprice}}
+</div> -->
+<!-- <div *ngFor="let u of users">
+    <label class=form-control>Product Id</label>
+    <input type="text"  class=form-control value=u.Proid [(ngModel)]="user.Proid"/> 
+    {{u.Proid}}
+    <label class=form-control>Product Name</label>
+    <input type="text"[(ngModel)]="user.Proname"class=form-control/> 
+    {{u.Proname}}
+    <label class=form-control>Category</label>
+     <input type=text [(ngModel)]="user.Category"class=form-control/>
+    {{u.Category}}
+    <label class=form-control>Type</label>
+    <input type="text" [(ngModel)]="user.Type"class=form-control> 
+    {{u.Type}}
+    <label class=form-control>Description 1</label>
+    <input type="text" [(ngModel)]="user.Des1"class=form-control>
+    {{u.Des1}}
+    <label class=form-control>Description 2</label>
+    <input type="text" [(ngModel)]="user.Des2"class=form-control>
+    {{u.Des2}}
+    <label class=form-control>Description 3</label>
+    <input type="text"[(ngModel)]="user.Des3" class=form-control>
+    {{u.Des3}}
+    <label class=form-control>Description 4</label>
+    <input type="text"[(ngModel)]="user.Des4" class=form-control>
+    {{u.Des4}}
+    <label class=form-control>Description 5</label>
+    <input type="text" [(ngModel)]="user.Des5"class=form-control>
+    {{u.Des5}} 
+    <label class=form-control>Price</label>
+    <input type="text" [(ngModel)]="user.Proprice"class=form-control>
+    {{u.Proprice}}
+    <label class=form-control>Quantity</label>
+    <input type="text" [(ngModel)]="user.Quantity"class=form-control>
+    {{u.Quantity}}
+    <label class=form-control>Image</label>
+     <input type="text" [(ngModel)]="user.Proimage"class=form-control>
+    {{u.Proimage}}
+    <button class="btn btn-success" (click)="update()">Update Product</button>
+</div> -->
+<form #form="ngForm" (submit)="update(form)" autocomplete="off"*ngFor="let user of users">
+<div class="form-group" >
+<label>Product Id</label>
+<input name=Proid #Proid="ngModel"  [(ngModel)]="user.Proid" class="form-control" required readonly>
+<div class="validation-error"*ngIf="Proid.invalid && Proid.touched" >This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Name</label>
+    <input name=Proname #Proname="ngModel" [(ngModel)]="user.Proname" class="form-control"required>
+    <div class="validation-error"*ngIf="Proname.invalid && Proname.touched">This field is required</div>
+</div>
+<div class="form-group">
+        <label>Category</label>
+        <input name=Category #Category="ngModel" [(ngModel)]="user.Category" class="form-control"required>
+        <div class="validation-error"*ngIf="Category.invalid && Category.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Type</label>
+    <input name=Type #Type="ngModel" [(ngModel)]="user.Type" class="form-control"required>
+    <div class="validation-error"*ngIf="Type.invalid && Type.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Description 1</label>
+    <input name=Des1 #Des1="ngModel" [(ngModel)]="user.Des1" class="form-control"required>
+    <div class="validation-error"*ngIf="Des1.invalid && Des1.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Description 2</label>
+    <input name=Des2 #Des2="ngModel" [(ngModel)]="user.Des2" class="form-control"required>
+    <div class="validation-error"*ngIf="Des2.invalid && Des2.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Description 3</label>
+    <input name=Des3 #Des3="ngModel" [(ngModel)]="user.Des3" class="form-control"required>
+    <div class="validation-error"*ngIf="Des3.invalid && Des3.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Description 4</label>
+    <input name=Des4 #Des4="ngModel" [(ngModel)]="user.Des4" class="form-control"required>
+    <div class="validation-error" *ngIf="Des4.invalid && Des4.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Description 5</label>
+    <input name=Des5 #Des5="ngModel" [(ngModel)]="user.Des5" class="form-control"required>
+    <div class="validation-error"*ngIf="Des5.invalid && Des5.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Product Price</label>
+    <input name=Proprice #Proprice="ngModel" [(ngModel)]="user.Proprice" class="form-control"required>
+    <div class="validation-error"*ngIf="Proprice.invalid && Proprice.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Available Quantity</label>
+    <input name=Quantity #Quantity="ngModel" [(ngModel)]="user.Quantity" class="form-control"required>
+    <div class="validation-error"*ngIf="Quantity.invalid && Quantity.touched">This field is required</div>
+</div>
+<div class="form-group">
+    <label>Image</label>
+    <input name=Proimage #Proimage="ngModel" [(ngModel)]="user.Proimage" class="form-control"required>
+    <div class="validation-error"*ngIf="Proimage.invalid && Proimage.touched">This field is required</div>
+</div>
+<button type="submit"  [disabled]="form.invalid"  class="btn btn-success">Submit</button>
+<button type="reset" (onClick)="resetForm()" class="btn btn-danger">Reset</button>
+</form>

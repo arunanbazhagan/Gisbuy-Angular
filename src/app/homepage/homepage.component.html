@@ -1,0 +1,41 @@
+<div>
+<label class=form-control>Admin Id</label>
+<br>
+<input type="text"[(ngModel)]="user.Adminid" class=form-control/>
+<br>
+<label class=form-control>Admin Password</label>
+<br>
+<input type="password"[(ngModel)]="user.Adminpass" class=form-control/>
+<br>
+<button class="btn btn-success"  (click)="login()">Log In</button>
+</div> 
+
+<div *ngIf="result" class="alert alert-info">
+        {{result}}
+    </div> 
+<!-- <form [formGroup]="myForm"(click)="login()">
+        <div>
+                <label class="form-control">Admin ID</label>
+                <br>
+                <input class="form-control"
+                type="text"
+                formControlName="adminid"/>
+                <span *ngIf="adminid?.errors&&adminid?.touched">
+                    <span *ngIf="adminid.errors.required">Id Cannot be Empty</span>
+                    <span *ngIf="adminid.errors.pattern">Invalid Id</span>
+                </span>
+                <br>
+                <label class="form-control">Admin Password</label>
+                <br>
+                <input class="form-control"
+                type="text"
+                formControlName="adminpass"/>
+                <span *ngIf="adminpass?.errors&&adminpass?.touched">
+                    <span *ngIf="adminpass.errors.required">Password Cannot be Empty</span>
+                </span>
+                <br>
+                <button class="btn btn-success">Log In</button>&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-danger">Cancel</button>
+        </div>
+</form>
+-->

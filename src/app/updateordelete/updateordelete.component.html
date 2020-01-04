@@ -1,0 +1,51 @@
+<!-- <div>
+    <label class=form-control>Enter the Product Id to Update&Delete</label>
+    <br>
+    <input class=form-control type="text"[(ngModel)]="user.Proid"/>
+    <br>
+    <button class="btn btn-success"(click)="update(user.Proid)">Update Details</button>
+    &nbsp;&nbsp;&nbsp;
+    <button class="btn btn-danger"(click)="delete()">Delete Product</button>
+    <br>
+    <div *ngIf="result" class="alert alert-info">
+        
+    </div>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div> -->
+<nav style="color: white;font-size: medium;">
+    <a routerLink="/newproduct" routerLinkActive="addproduct">Add Product</a>
+    
+  </nav>
+<table class="table table-hover" style="font-size: medium;color: black;">
+    <th>Update</th>
+    <th>Product Id</th>
+    <th>Product Name</th>
+    <th>Category</th>
+    <th>Type</th>
+    <th>Description 1</th>
+    <th>Description 2</th>
+    <th>Description 3</th>
+    <th>Description 4</th>
+    <th>Description 5</th>
+    <th>Product Price</th>
+    <th>Available Quantity</th>
+    <th>Image URL</th>
+    <tr *ngFor="let u of gisbuyService.list">
+<td><button class="btn btn-info" (click)="GetProduct(u.Proid)">Edit</button></td> 
+<td (click)="GetProduct(u.Proid)">{{u.Proid}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Proname}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Category}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Type}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Des1}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Des2}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Des3}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Des4}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Des5}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Proprice}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Quantity}}</td>
+<td (click)="GetProduct(u.Proid)">{{u.Proimage}}</td>
+<td><button class="btn btn-danger" (click)="delete(u.Proid)">Delete</button></td> 
+</tr>
+</table>
